@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Signin from "./pages/Auth/Signin";
 import Signup from "./pages/Auth/Signup";
 import Products from "./pages/Products";
+import ProductDetail from "./pages/Products/productDetail";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <Navbar/>
         <div id="content">
         <Routes>
-          <Route path="/" exact element={<Products/>}/>
+          <Route path="/products" exact element={<Products/>}/>
+          <Route path="/product/:product_id" element={<ProductDetail/>}/>
           <Route path="/signin"  element={<Signin/>}/>
           <Route path="/signup" element={<Signup/>}/>
         </Routes>
