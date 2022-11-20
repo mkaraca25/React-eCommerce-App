@@ -2,7 +2,7 @@ import React from 'react'
 import Card from '../../components/Card'
 import { Box,Button, Flex, Grid } from '@chakra-ui/react'
 import { useInfiniteQuery } from 'react-query'
-
+import styles from '../../components/Navbar/styles.module.css'
 
 function Products() {
   const fetchProductList = async ({ pageParam = 0 }) => {
@@ -24,8 +24,8 @@ function Products() {
   loadingText='Loading' variant='solid'>
 </Button></Flex>
   return (
-    <div>
-      <Grid templateColumns='repeat(3, 1fr)' gap={4}>
+    <div className={styles.Products}>
+      <Grid templateColumns='repeat(4, 1fr)' gap={4}>
         {data.pages.map((group, i) => (
           <React.Fragment key={i}>
             {
